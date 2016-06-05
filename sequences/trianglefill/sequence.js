@@ -1,15 +1,28 @@
-// This is a left to right fill sequence
+// This sequence fills in the perimeter clockwise
 
 var blockAmt = $('.sequenceblock').length;
 var blockCounter = 0;
 
+
+
+
+
+
 function sequence() {
     setTimeout(function () {
         $('.sequenceblock:eq('+blockCounter+')').css('background-color', '#ddf');
-        blockCounter++;
         console.log(blockCounter);
-        if (blockCounter < blockAmt) {
+        if (blockCounter < 4) {
+          blockCounter++;
           sequence();
+        } else if (blockCounter === 4) {
+          blockCounter += 3;//get first left
+          sequence();
+        } else if (false) {
+          //get right side
+        } else if (false) {
+          //get bottom row
+          console.log('BOTTOM row')
         } else {
           blockCounter = 0;
           setTimeout(function() {
