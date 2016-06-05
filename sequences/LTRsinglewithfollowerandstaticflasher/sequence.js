@@ -6,7 +6,7 @@ var blockCounter = 0;
 
 function resetColors() {
   setTimeout(function() {
-    $('.sequenceblock').css('background-color', 'rgba(256, 0, 0, .2)');
+    $('.sequenceblock').css('background-color', defaultColor);
     $('#flasher').toggleClass('hidden');//rest flasher at end
   }, 300);
 }
@@ -16,11 +16,11 @@ function sequence() {
         if ( (blockCounter % 2 === 0) && (blockCounter > 1) ) {
           $('#flasher').toggleClass('hidden');
         }
-        $('.sequenceblock:eq('+blockCounter+')').css('background-color', '#ddf');
+        $('.sequenceblock:eq('+blockCounter+')').css('background-color', singleColor);
         if ( !(blockCounter === 0) ) {
-          $('.sequenceblock:eq('+(blockCounter-1)+')').css('background-color', '#ff6');
+          $('.sequenceblock:eq('+(blockCounter-1)+')').css('background-color', followColor);
         }
-        $('.sequenceblock:eq('+(blockCounter-2)+')').css('background-color', 'rgba(256, 0, 0, .2)');//cleans sequence block before follower
+        $('.sequenceblock:eq('+(blockCounter-2)+')').css('background-color', defaultColor);//cleans sequence block before follower
         blockCounter++;
         console.log(blockCounter);
         if (blockCounter < blockAmt) {
@@ -28,8 +28,8 @@ function sequence() {
         } else {
           blockCounter = 0;
           setTimeout(function() {
-            $('.sequenceblock:eq('+(blockCounter-1)+')').css('background-color', '#ff6');
-            $('.sequenceblock:eq('+(blockCounter-2)+')').css('background-color', 'rgba(256, 0, 0, .2)');//cleans leftover follower
+            $('.sequenceblock:eq('+(blockCounter-1)+')').css('background-color', followColor);
+            $('.sequenceblock:eq('+(blockCounter-2)+')').css('background-color', defaultColor);//cleans leftover follower
             resetColors();
           }, 300);
         }
