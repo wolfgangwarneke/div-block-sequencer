@@ -19,13 +19,13 @@ function sequence() {
     }, 300);
 }
 
-function manytimes(howmanytimes) {
-  for (i = 0; i < howmanytimes; i++) {
-    var timing = 300;
-    setTimeout(sequence, timing);
-    timing += 300 * 16;
-}
-}
+// function manytimes(howmanytimes) {
+//   for (i = 0; i < howmanytimes; i++) {
+//     var timing = 300;
+//     setTimeout(sequence, timing);
+//     timing += 300 * 16;
+// }
+// }
 
 $(document).ready(function() {
   // var thismany = parseInt(prompt('How many times would you like to run this sequence?'));
